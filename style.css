@@ -1,0 +1,257 @@
+:root {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --primary: #38bdf8;
+  --card: #1e293b;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a, nav button {
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-content {
+  display: flex;
+  gap: 40px;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+.hero img {
+  width: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+}
+
+.section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section.dark {
+  background: #020617;
+}
+
+.btn {
+  background: var(--primary);
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.whatsapp {
+  background: #22c55e;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.skill {
+  min-width: 220px;
+  background: var(--card);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.timeline {
+  max-width: 800px;
+  margin: auto;
+}
+
+.job {
+  background: var(--card);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+}
+
+.form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.form input, .form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.links{
+    display: flex;
+    padding: 25px;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===============================
+   RESPONSIVIDADE GERAL
+================================ */
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 20px 5%;
+  }
+
+  .hero-content {
+    padding: 60px 5%;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+}
+
+/* ===============================
+   TABLETS
+================================ */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content img {
+    width: 150px;
+  }
+
+  .carousel-track {
+    animation-duration: 30s;
+  }
+
+  .timeline {
+    padding: 0 10px;
+  }
+
+  .job {
+    text-align: left;
+  }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+
+  .skill {
+    min-width: 180px;
+    font-size: 0.9rem;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form input,
+  .form textarea {
+    font-size: 0.9rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
+}
