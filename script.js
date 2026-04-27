@@ -88,6 +88,8 @@ window.addEventListener('load', () => {
 
   let largura = window.innerWidth;
   let altura = window.innerHeight;
+  console.log("L: " + largura)
+  console.log("A: " + altura)
 
   if(largura < 600){largura = 1500;}
 
