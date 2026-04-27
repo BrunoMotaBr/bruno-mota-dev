@@ -115,12 +115,12 @@ window.addEventListener('load', () => {
     bruno3d.position.y = 0;
   
     if(window.innerWidth <= 545){
-      bruno3d.position.z = -35;
+      bruno3d = null;
     }
   
     cena.add(bruno3d);
   });
-  
+
   const txtLoader = new THREE.TextureLoader();
   txtLoader.load( 'assets/imgs/hdri.webp', (textura) => {
     textura.mapping = THREE.EquirectangularReflectionMapping;
@@ -145,5 +145,10 @@ window.addEventListener('load', () => {
     projetor.render(cena, camera);
   }
   
-  animar();
+  if(bruno3d === null){
+    return;
+  }else{
+    animar();
+  }
+  
 });

@@ -376,3 +376,17 @@ section {
   border-top: 1px solid var(--border);
   font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
 }
+
+
+@media (max-width: 540px){
+  .hero-desc{
+    width: 100%;
+  }
+  .hero-content{
+    width: 100vw;
+  }
+  .meuCanvas3d{
+    width: 350px;
+    height: 500px;
+  }
+}
