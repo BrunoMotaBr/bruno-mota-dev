@@ -84,9 +84,18 @@ window.addEventListener('load', () => {
 
   const cena = new THREE.Scene();
   
+  const divBruno3d = document.querySelector(".bruno3d");
+
+  let largura = window.innerWidth;
+  let altura = window.innerHeight;
+  console.log("Altura: " + altura);
+  console.log("largura: " + largura);
+
+  if(largura < 900){largura = 1500;}
+
   const camera = new THREE.PerspectiveCamera(
       40, 
-      window.innerWidth/window.innerHeight,
+      largura / altura,
       0.1,
       1000
   );
@@ -98,7 +107,6 @@ window.addEventListener('load', () => {
   projetor.domElement.id = "meuCanvas3d";
   projetor.toneMapping = THREE.ACESFilmicToneMapping; // Dá um visual mais realista
   projetor.toneMappingExposure = 10;
-  const divBruno3d = document.querySelector(".bruno3d");
   divBruno3d.addEventListener('mouseenter', () => { mouseSobre = true;  });
   divBruno3d.addEventListener('mouseleave', () => { mouseSobre = false; });
   
@@ -115,12 +123,12 @@ window.addEventListener('load', () => {
     bruno3d.position.y = 0;
   
     if(window.innerWidth <= 545){
-      bruno3d = null;
+      bruno3d.scale.set(0.5,0.5,0.5);
     }
   
     cena.add(bruno3d);
   });
-
+  
   const txtLoader = new THREE.TextureLoader();
   txtLoader.load( 'assets/imgs/hdri.webp', (textura) => {
     textura.mapping = THREE.EquirectangularReflectionMapping;
@@ -145,10 +153,5 @@ window.addEventListener('load', () => {
     projetor.render(cena, camera);
   }
   
-  if(bruno3d === null){
-    return;
-  }else{
-    animar();
-  }
-  
+  animar();
 });
