@@ -91,7 +91,7 @@ window.addEventListener('load', () => {
   console.log("L: " + largura)
   console.log("A: " + altura)
 
-  if(largura < 600){largura = 1500;}
+  if(largura < 1500){largura = 1500;}
 
   const camera = new THREE.PerspectiveCamera(
       40, 
